@@ -21,7 +21,7 @@ BEGIN TRANSACTION;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
 COMMIT;
-SELECT * FROM animals; -- Verifica que el cambio se haya realizado y persistido después del COMMIT
+SELECT * FROM animals; 
 
 -- Second Transaction 
 BEGIN TRANSACTION;
