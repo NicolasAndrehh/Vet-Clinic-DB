@@ -18,12 +18,25 @@ SELECT * from animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
 -- First Transaction 
 BEGIN TRANSACTION;
+UPDATE animals SET species = 'unspecified';
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+-- Second transaction
+BEGIN TRANSACTION;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
 COMMIT;
 SELECT * FROM animals; 
 
--- Second Transaction 
+-- Third Transaction 
+BEGIN TRANSACTION;
+DELETE FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+-- Fourth Transaction 
 BEGIN TRANSACTION;
 DELETE from animals WHERE date_of_birth > '2022/01/01';
 SAVEPOINT animals_after_2022;
