@@ -10,3 +10,6 @@ CREATE TABLE animals (
     neutered BOOLEAN NOT NULL,
     weight_kg DECIMAL NOT NULL
 );
+
+ALTER TABLE public.animals
+ADD species VARCHAR(50);
