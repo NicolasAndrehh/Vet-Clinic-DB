@@ -49,6 +49,13 @@ VALUES
 ('Stephanie Mendez', 64, '1981/05/04'),
 ('Jack Harkness', 38, '2008/06/08');
 
+INSERT INTO public.specializations(vet_id, specie_id)
+VALUES 
+(1, 1),
+(3, 1),
+(3, 2),
+(4, 2);
+
 INSERT INTO public.visits(vet_id, animal_id, date_of_visit)
 VALUES 
 (1, 1, '2020/05/24'),
