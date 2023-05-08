@@ -63,3 +63,9 @@ CREATE TABLE visits (
 	animal_id INT REFERENCES animals(id),
 	date_of_visit DATE NOT NULL
 );
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+CREATE INDEX visits_animal ON visits (animal_id)
+CREATE INDEX idx_visits_vet_id ON visits (vet_id)
+CREATE INDEX owners_email ON owners (email)
