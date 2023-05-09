@@ -36,8 +36,29 @@ payed_at timestamp DEFAULT CURRENT_TIMESTAMP,
 medical_history_id INTEGER
 );
 
-
 CREATE TABLE medical_history_treatment (
 medical_history_id INTEGER REFERENCES medical_histories(id),
 treatment_id INTEGER REFERENCES treatments (id),
 PRIMARY KEY (medical_history_id, treatment_id));
+
+ALTER TABLE invoices
+ADD CONSTRAINT fk_medical_history_id
+FOREIGN KEY (medical_history_id)
+REFERENCES medical_histories (id)
+ON DELETE RESTRICT
+ON UPDATE CASCADE;
+
+ALTER TABLE medical_histories
+ADD CONSTRAINT fk_medical_histories_patients
+FOREIGN KEY (patient_id)
+REFERENCES patients (id);
+
+ALTER TABLE invoice_items
+ADD CONSTRAINT FK_invoices_items_invoices
+FOREIGN KEY (invoice_id)
+REFERENCES invoices (id);
+
+ALTER TABLE invoice_items
+ADD CONSTRAINT FK_invoice_items_treatments
+FOREIGN KEY (treatment_id)
+REFERENCES treatments (id);
