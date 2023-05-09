@@ -11,6 +11,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [Database Diagram](#database-diagram)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -27,6 +28,10 @@
 # 📖 Vet Clinic Database <a name="about-project"></a>
 
 **Vet Clinic Database** is a relational database system for a vet clinic.
+
+## Database Diagram <a name="database-diagram"></a>
+
+![Database Diagram](./database_diagram.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 
